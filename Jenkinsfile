@@ -8,16 +8,17 @@ pipeline {
 
     stages {
         
-        stage('Cloning Git') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/bps21619/jenkins']]])     
-            }
-        }
+       // stage('Cloning Git') {
+           // steps {
+              //  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/bps21619/jenkins']]])     
+           // }
+       // }
 
         stage('Docker build'){
             steps{
                 script{
                     dockerImage= docker.build registry
+                    sh "dcoker build -t test ."
                 }
             }
         }

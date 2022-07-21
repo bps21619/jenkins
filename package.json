@@ -1,5 +1,5 @@
 {
-  "name": "jenkinsdemo",
+  "name": "jenkins",
   "version": "1.0.0",
   "description": "test",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karthik-ey/JenkinsDemo.git"
+    "url": "git+https:github.com/bps21619/jenkins.git"
   },
   "keywords": [
     "jenkins"
@@ -16,7 +16,7 @@
   "author": "karthik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/karthik-ey/JenkinsDemo/issues"
+    "url": "https://github.com/bps21619/jenkins.git/issues"
   },
-  "homepage": "https://github.com/karthik-ey/JenkinsDemo#readme"
+  "homepage": "https://github.com/bps21619/jenkins.git#readme"
 }

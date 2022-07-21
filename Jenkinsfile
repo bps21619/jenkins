@@ -17,7 +17,7 @@ pipeline {
                 sh docker push 081184234118.dkr.ecr.ap-south-1.amazonaws.com/test:latest
                     }
                 }
-            }
+            
         }
     }
 }

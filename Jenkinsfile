@@ -6,7 +6,7 @@ pipeline {
         stage('Docker build'){
             steps{
                 script{
-                    docker.build('jenkins/demo')
+                    docker.build('jenkins/')
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps{
                 script{
                     docker.withRegistry('https://081184234118.dkr.ecr.ap-south-1.amazonaws.com/test') {
-                        docker.image('jenkins/demo').push("$currentBuild.number")
+                        docker.image('jenkins/').push("$currentBuild.number")
                     }
                 }
             }

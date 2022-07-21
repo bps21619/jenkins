@@ -19,6 +19,7 @@ pipeline {
                 script{
                     dockerImage= docker.build registry
                     sh "docker build -t test ."
+                    sh "docker tag test:latest 081184234118.dkr.ecr.ap-south-1.amazonaws.com/test:latest"
                 }
             }
         }

@@ -18,7 +18,7 @@ pipeline {
             steps{
                 script{
                     dockerImage= docker.build registry
-                    sh "dcoker build -t test ."
+                    sh "docker build -t test ."
                 }
             }
         }

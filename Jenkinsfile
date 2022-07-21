@@ -1,12 +1,17 @@
 pipeline {
     agent any
+    environment{
+                 
+              registry = "081184234118.dkr.ecr.ap-south-1.amazonaws.com/test"
+         
+    }
 
     stages {
 
         stage('Docker build'){
             steps{
                 script{
-                    docker.build('Dockerfile')
+                    docker.build registry
                 }
             }
         }

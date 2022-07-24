@@ -4,8 +4,7 @@ pipeline {
     environment{
                  
               registry = "081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins"
-         
-    }
+          }
 
     stages {
         

@@ -18,8 +18,9 @@ pipeline {
             steps{
                 script{
                     dockerImage= docker.build registry
-                    sh "docker build -t test ."
-                    sh "docker tag test:latest 081184234118.dkr.ecr.ap-south-1.amazonaws.com/test:latest"
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 081184234118.dkr.ecr.us-east-1.amazonaws.com'
+                    sh "docker build -t jenkins ."
+                    sh "docker tag jenkins:latest 081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins:latest"
                 }
             }
         }
@@ -27,8 +28,8 @@ pipeline {
         stage('Docker push'){
             steps{
               script{
-                 sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 081184234118.dkr.ecr.ap-south-1.amazonaws.com'
-                 sh 'docker push 081184234118.dkr.ecr.ap-south-1.amazonaws.com/test:latest'
+                
+                 sh 'docker push 081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins:latest'
                }
         }
     }

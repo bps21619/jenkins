@@ -1,7 +1,5 @@
 FROM node:8.4.0
 
-RUN apt install npm
-
 WORKDIR /app/
 
 COPY . /app/

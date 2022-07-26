@@ -3,7 +3,7 @@ pipeline {
     
     environment{
                  
-              registry = "081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins"
+              registry = "034280345394.dkr.ecr.us-east-1.amazonaws.com/nodeapp"
           }
 
     stages {
@@ -19,9 +19,9 @@ pipeline {
                 script{
                     
                     dockerImage= docker.build registry
-                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 081184234118.dkr.ecr.us-east-1.amazonaws.com'
-                    sh "docker build -t jenkins ."
-                    sh "docker tag jenkins:latest 081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins:latest"
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 034280345394.dkr.ecr.us-east-1.amazonaws.com'
+                    sh "docker build -t nodeapp ."
+                    sh "docker tag nodeapp:latest 034280345394.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest"
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps{
               script{
                 
-                 sh 'docker push 081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins:latest'
+                 sh 'docker push 034280345394.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest'
                }
         }
     }

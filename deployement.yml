@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nodejs
-          image: 081184234118.dkr.ecr.us-east-1.amazonaws.com/jenkins
+          image: 034280345394.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest
           ports:
             - containerPort: 8080
               protocol: TCP
